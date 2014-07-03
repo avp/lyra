@@ -9,12 +9,15 @@
 <body ng-controller="SortController" ng-cloak>
 <div class="col-left">
   <div class="decision-maker">
-    <h1>Pick the better song and it'll sort.</h1>
-
-    <div ng-show="decision">
-      <button class="myButton" ng-click="decide(decision.a, decision.b)">{{ decision.a.artist }} - {{ decision.a.title }}</button>
-      <br/>
-      <button class="myButton" ng-click="decide(decision.b, decision.a)">{{ decision.b.artist }} - {{ decision.b.title }}</button>
+    <div ng-show="decision" class="decision-container text-center">
+      <button class="myButton btn-decision" ng-click="decide(decision.a, decision.b)">
+        <h2>{{ decision.a.title }}</h2>
+        <h3>{{ decision.a.artist }}</h3>
+      </button>
+      <button class="myButton btn-decision" ng-click="decide(decision.b, decision.a)">
+        <h2>{{ decision.b.title }}</h2>
+        <h3>{{ decision.b.artist }}</h3>
+      </button>
     </div>
   </div>
 </div>
