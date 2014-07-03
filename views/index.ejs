@@ -11,22 +11,12 @@
   <div class="decision-maker">
     <h1>Pick the better song and it'll sort.</h1>
 
-    <h2>Comparisons: {{ decisionCount }}</h2>
-
     <div ng-show="decision">
-      <button class="myButton" ng-click="decide(decision.a)">{{ decision.a }}</button>
+      <button class="myButton" ng-click="decide(decision.a, decision.b)">{{ decision.a.artist }} - {{ decision.a.title }}</button>
       <br/>
-      <button class="myButton" ng-click="decide(decision.b)">{{ decision.b }}</button>
+      <button class="myButton" ng-click="decide(decision.b, decision.a)">{{ decision.b.artist }} - {{ decision.b.title }}</button>
     </div>
   </div>
-</div>
-
-<div class="col-right">
-  <table>
-    <tr ng-repeat="song in songs track by $index">
-      <td>{{ song }}</td>
-    </tr>
-  </table>
 </div>
 
 <script src="//cdnjs.cloudflare.com/ajax/libs/lodash.js/2.4.1/lodash.min.js"></script>

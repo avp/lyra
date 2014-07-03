@@ -15,6 +15,7 @@
     "ejs": "~0.8.5",
     "less-middleware": "1.0.x",
     "lodash": "~2.4.1",
-    "mongodb": "~1.4.7"
+    "mongodb": "~1.4.7",
+    "elo-rank": "~0.2.2"
   }
 }

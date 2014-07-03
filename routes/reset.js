@@ -32,7 +32,8 @@ router.get('/', function(req, res) {
             artist: data[1].trim(),
             title: data[2].trim(),
             wins: 0,
-            losses: 0
+            losses: 0,
+            elo: 1000
           };
         }).value();
 

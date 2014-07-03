@@ -4,16 +4,14 @@ var fs = require('fs');
 var _ = require('lodash');
 
 router.get('/', function(req, res) {
-  fs.readFile('playlists.txt', 'utf8', function(err, data) {
-    if (err) {
-      console.log(err);
-    }
+  var MongoClient = require('mongodb').MongoClient;
 
-    var songs = _.chain(data.split('\n')).map(function(song) {
-      return song.split('|').splice(1).join('-').trim();
-    }).shuffle().value();
-
-    res.send(songs);
+  MongoClient.connect('mongodb://127.0.0.1:27017/musicsort', function(err, db) {
+    var songs = db.collection('songs').find();
+    songs.toArray(function(err, songs) {
+      songs = _.chain(songs).sortBy('elo').reverse().value();
+      res.render('songs', {songs: songs});
+    });
   });
 });
 
