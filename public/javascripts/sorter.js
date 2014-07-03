@@ -40,8 +40,10 @@ angular.module('Sorter', [])
 
     var compare = function(a, b) {
       var deferred = $q.defer();
-      $scope.decision = {a: a, b: b};
-      $scope.decisionDeferred = deferred;
+//      $scope.decision = {a: a, b: b};
+//      $scope.decisionDeferred = deferred;
+      deferred.resolve(a);
+      $scope.decisionCount++;
       return deferred.promise;
     };
 

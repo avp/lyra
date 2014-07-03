@@ -9,12 +9,13 @@
 <body ng-controller="SortController" ng-cloak>
 <div class="col-left">
   <div class="decision-maker">
-    <h1>Pick the higher number and it'll sort.</h1>
+    <h1>Pick the better song and it'll sort.</h1>
 
     <h2>Comparisons: {{ decisionCount }}</h2>
 
     <div ng-show="decision">
       <button class="myButton" ng-click="decide(decision.a)">{{ decision.a }}</button>
+      <br/>
       <button class="myButton" ng-click="decide(decision.b)">{{ decision.b }}</button>
     </div>
   </div>
@@ -22,7 +23,7 @@
 
 <div class="col-right">
   <table>
-    <tr ng-repeat="song in songs">
+    <tr ng-repeat="song in songs track by $index">
       <td>{{ song }}</td>
     </tr>
   </table>
