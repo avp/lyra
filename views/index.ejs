@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html ng-app="Sorter">
+<head>
+  <title>Music Sorter</title>
+  <link rel="stylesheet" href="/stylesheets/style.css"/>
+  <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.19/angular.min.js"></script>
+</head>
+<body ng-controller="SortController" ng-cloak>
+<div class="col-left">
+  <div class="decision-maker">
+    <h1>Pick the higher number and it'll sort.</h1>
+
+    <h2>Comparisons: {{ decisionCount }}</h2>
+
+    <div ng-show="decision">
+      <button class="myButton" ng-click="decide(decision.a)">{{ decision.a }}</button>
+      <button class="myButton" ng-click="decide(decision.b)">{{ decision.b }}</button>
+    </div>
+  </div>
+</div>
+
+<div class="col-right">
+  <table>
+    <tr ng-repeat="song in songs">
+      <td>{{ song }}</td>
+    </tr>
+  </table>
+</div>
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/lodash.js/2.4.1/lodash.min.js"></script>
+<script src="/javascripts/sorter.js"></script>
+</body>
+</html>
