@@ -24,19 +24,21 @@ router.get('/', function(req, res) {
         }
 
         var songs = _.chain(data.split('\n')).filter(function(song) {
-          return song.split('|').length === 3;
+          return song.split('|').length === 4;
         }).map(function(song) {
           var data = song.split('|');
           return {
             playlist: data[0].trim(),
             artist: data[1].trim(),
             title: data[2].trim(),
+            albumArtLocation: data[3].trim(),
             wins: 0,
             losses: 0,
             elo: 1000
           };
         }).value();
 
+        console.log(songs);
         collection.insert(songs, function(err) {
           if (err) {
             throw err;

@@ -10,14 +10,16 @@
 <div class="col-left">
   <div class="decision-maker">
     <div ng-show="decision" class="decision-container text-center">
-      <button class="myButton btn-decision" ng-click="decide(decision.a, decision.b)">
+      <div class="btn-decision" ng-click="decide(decision.a, decision.b)">
+        <p class="img-container"><img ng-src="{{ decision.a.albumArtLocation }}"></p>
         <h2>{{ decision.a.title }}</h2>
         <h3>{{ decision.a.artist }}</h3>
-      </button>
-      <button class="myButton btn-decision" ng-click="decide(decision.b, decision.a)">
+      </div>
+      <div class="btn-decision" ng-click="decide(decision.b, decision.a)">
+        <p class="img-container"><img ng-src="{{ decision.b.albumArtLocation }}"></p>
         <h2>{{ decision.b.title }}</h2>
         <h3>{{ decision.b.artist }}</h3>
-      </button>
+      </div>
     </div>
   </div>
 </div>
