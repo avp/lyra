@@ -16,6 +16,8 @@
     "less-middleware": "1.0.x",
     "lodash": "~2.4.1",
     "mongodb": "~1.4.7",
-    "elo-rank": "~0.2.2"
+    "elo-rank": "~0.2.2",
+    "cryptojs": "~2.5.3",
+    "basic-auth-connect": "~1.0.0"
   }
 }
