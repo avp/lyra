@@ -3,6 +3,7 @@ angular.module('Sorter', [])
     $scope.decisionCount = 0;
 
     $scope.decide = function(winner, loser) {
+      $scope.decision = null;
       $http.post('/decide', {
         winner: winner._id,
         loser: loser._id
