@@ -8,8 +8,8 @@ var basicAuth = require('basic-auth-connect');
 router.get('/', basicAuth(function(user, pass) {
   return user === 'admin' && Crypto.MD5(pass).toString() === '7b69b90521d0c3a81c61395387820ab4';
 }), function(req, res) {
-  res.send(403);
-  return;
+//  res.send(403);
+//  return;
 
   var MongoClient = require('mongodb').MongoClient;
 

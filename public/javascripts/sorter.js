@@ -1,5 +1,5 @@
-angular.module('Sorter', [])
-  .controller('SortController', function($scope, $http, $q) {
+angular.module('Lyra', [])
+  .controller('LyraController', function($scope, $http) {
     $scope.decisionCount = 0;
 
     $scope.decide = function(winner, loser) {
@@ -18,5 +18,5 @@ angular.module('Sorter', [])
 
     $http.get('/decide').success(function(decision) {
       $scope.decision = decision;
-    })
+    });
   });

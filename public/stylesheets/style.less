@@ -1,5 +1,5 @@
 body {
-  padding: 50px;
+  padding-top: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
@@ -26,6 +26,12 @@ body {
     background: greenyellow;
     background: fadeout(#090, 50%);
   }
+  @media (max-width: 700px) {
+    height: auto;
+    min-height: 300px;
+    width: 30%;
+    margin: 0 5px;
+  }
   .img-container {
     @album-art-size: 300px;
     width: @album-art-size;
@@ -33,6 +39,13 @@ body {
     max-width: 80%;
     .text-center();
     margin: 40px auto;
+    @media (max-width: 700px) {
+      height: auto;
+      img {
+        width: 100%;
+        height: auto;
+      }
+    }
     img {
       max-width: 100%;
       width: 100%;
